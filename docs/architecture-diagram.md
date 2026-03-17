@@ -3,21 +3,27 @@ Architecture Diagram System Components
 User
 
 |
+
 Frontend Interface
 
 | 
+
 Backend API Service
 
 |
+
 Fraud Detection Engine
 
 | 
+
 Machine Learning Risk Scoring Model
 
 |
+
 Database
 
 |
+
 Fraud Detection Result / Alert
 
 Explanation
