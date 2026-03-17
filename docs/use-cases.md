@@ -1,54 +1,53 @@
-Use Cases
-Actors
-- User
-- Financial Analyst
-- System Administrator
-- Fraud Detection System
+Use Case Specifications
 
-Main Use Cases
-1. Submit Transaction
-Actor: User  
-Description: The user submits transaction details to the system.
+1: Process Transaction
+Actor: System  
+Description: Processes incoming transaction and evaluates fraud risk  
 
-2. Analyze Transaction
-Actor: Fraud Detection System  
-Description: The system processes transaction data.
+Steps:
+1. Receive transaction request
+2. Validate input data
+3. Store transaction in database
+4. Execute rule-based checks
+5. Run ML model prediction
+6. Calculate risk score
+7. Return decision
 
-3. Calculate Risk Score
-Actor: Fraud Detection System  
-Description: The system calculates a risk score based on transaction data.
+2: Detect Fraud
+Actor: System  
+Description: Identifies suspicious transactions  
 
-4. Predict Fraud Using ML Model
-Actor: Fraud Detection System  
-Description: The system uses a machine learning-based model to evaluate transaction risk.
+Steps:
+1. Analyze transaction attributes
+2. Detect anomalies
+3. Assign risk score
+4. Flag transaction if necessary
 
-5. Flag Suspicious Transaction
-Actor: Fraud Detection System  
-Description: The system flags transactions as suspicious if risk is high.
+3: Generate Alert
+Actor: System  
+Description: Creates alert for suspicious transactions  
 
-6. Review Flagged Transactions
-Actor: Financial Analyst  
-Description: The analyst reviews suspicious transactions.
+Steps:
+1. Identify high-risk transaction
+2. Generate alert
+3. Store alert in database
+4. Notify dashboard
 
-7. Investigate Fraud Case
-Actor: Financial Analyst  
-Description: The analyst investigates flagged cases.
+4: Review Alert
+Actor: Fraud Analyst  
+Description: Investigate suspicious transactions  
 
-8. Store Transaction Data
-Actor: Fraud Detection System  
-Description: The system stores transaction data in the database.
+Steps:
+1. View alert details
+2. Analyze transaction data
+3. Mark as fraud or legitimate
+4. Update system status
 
-9. Manage System Rules
-Actor: System Administrator  
-Description: The administrator updates fraud detection rules.
+5: View Dashboard
+Actor: Admin / Analyst  
+Description: Monitor system and fraud metrics  
 
-Simple Diagram 
-
-- User → Submit Transaction  
-- System → Analyze Transaction  
-- System → Calculate Risk Score  
-- System → Predict Fraud (ML Model)  
-- System → Flag Suspicious Transaction  
-- Financial Analyst → Review Flagged Transactions  
-- Financial Analyst → Investigate Fraud Case  
-- System Administrator → Manage System Rules  
+Steps:
+1. Access dashboard
+2. View statistics and trends
+3. Analyze fraud patterns
