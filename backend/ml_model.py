@@ -1,24 +1,23 @@
-# Simple ML-like fraud detection (simulation)
-
-def predict_fraud(amount, location):
+def predict_fraud(amount, country, is_new_device):
     score = 0
 
-    # feature 1: amount
-    if amount > 10000:
-        score += 0.7
-    elif amount > 5000:
-        score += 0.4
-    else:
-        score += 0.1
+    if amount > 1000:
+        score += 40
 
-    # feature 2: location
-    if location.lower() == "unknown":
-        score += 0.3
+    if country.lower() not in ["armenia", "france"]:
+        score += 30
 
-    # decision
-    if score > 0.7:
-        return "High Risk"
-    elif score > 0.4:
-        return "Medium Risk"
+    if is_new_device:
+        score += 20
+
+    if score >= 60:
+        decision = "BLOCK"
+    elif score >= 30:
+        decision = "REVIEW"
     else:
-        return "Low Risk"
+        decision = "APPROVE"
+
+    return {
+        "risk_score": score,
+        "decision": decision
+    }
