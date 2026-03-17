@@ -1,22 +1,23 @@
-Architecture Diagram
-System Components
+Architecture Diagram System Components
 
-User  
-|  
-Frontend  
+User
+|
+Frontend Interface
 | 
-Backend (Flask API)  
-|  
-Machine Learning Risk Scoring Model  
-|  
-Database  
-|  
-Fraud Detection Result  
+Backend API Service
+|
+Fraud Detection Engine
+| 
+Machine Learning Risk Scoring Model
+|
+Database
+|
+Fraud Detection Result / Alert
 
 Explanation
-- User interacts with the system
-- Frontend collects transaction information
-- Backend processes the request
-- ML Model evaluates fraud risk
-- Database stores transaction data and results
-- Result is returned to the user or analyst
+-The user interacts with the system through the frontend
+-The frontend sends transaction data to the backend API
+-The backend processes the request and calls the fraud detection engine
+-The machine learning model evaluates the transaction risk
+-The database stores transaction data and fraud analysis results
+-The system returns the final fraud detection result
