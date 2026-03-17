@@ -1,24 +1,32 @@
-# Simple fraud detection logic
+from flask import Flask, request, jsonify
 
-def detect_fraud(transaction):
-    amount = transaction["amount"]
-    location = transaction["location"]
+app = Flask(__name__)
 
-    # simple rules
+def detect_risk(amount, location):
     if amount > 10000:
         return "High Risk"
-
-    if location == "Unknown":
+    if location.lower() == "unknown":
         return "Medium Risk"
-
     return "Low Risk"
 
+@app.route("/")
+def home():
+    return "AI Fraud Detection System API is running"
 
-# test data
-transaction1 = {"amount": 15000, "location": "Yerevan"}
-transaction2 = {"amount": 200, "location": "Unknown"}
-transaction3 = {"amount": 100, "location": "Yerevan"}
+@app.route("/check", methods=["POST"])
+def check_transaction():
+    data = request.get_json()
 
-print(detect_fraud(transaction1))
-print(detect_fraud(transaction2))
-print(detect_fraud(transaction3))
+    amount = data.get("amount", 0)
+    location = data.get("location", "")
+
+    risk = detect_risk(amount, location)
+
+    return jsonify({
+        "amount": amount,
+        "location": location,
+        "risk": risk
+    })
+
+if __name__ == "__main__":
+    app.run(debug=True)
