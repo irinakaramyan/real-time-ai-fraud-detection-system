@@ -1,19 +1,21 @@
 User Stories
 
-Customer
-- As a customer, I want my transactions to be monitored in real time so that I am protected from fraudulent activity.
-- As a customer, I want suspicious transactions to be automatically blocked to minimize financial risk.
+Customer Stories
+- As a customer, I want my transaction to be processed quickly so that I can complete my payment without delay.
+- As a customer, I want suspicious activity on my account to be detected automatically so that my money is protected.
+- As a customer, I want risky transactions to be blocked or reviewed so that fraud can be prevented.
 
-Fraud Analyst
-- As a fraud analyst, I want to view suspicious transactions so that I can investigate them efficiently.
-- As a fraud analyst, I want to analyze risk scores and transaction details to make informed decisions.
-- As a fraud analyst, I want to review and resolve fraud alerts.
+Fraud Analyst Stories
+- As a fraud analyst, I want to see suspicious transactions in a dashboard so that I can investigate them efficiently.
+- As a fraud analyst, I want to review alerts with reasons and scores so that I can make informed decisions.
+- As a fraud analyst, I want to update the alert status so that fraud cases can be tracked properly.
 
-System
-- As a system, I want to process transactions instantly to ensure real-time fraud detection.
-- As a system, I want to apply rule-based and machine learning detection mechanisms.
-- As a system, I want to generate alerts for high-risk activities.
+System Administrator Stories
+- As a system administrator, I want transaction and fraud data to be stored securely so that the system remains reliable.
+- As a system administrator, I want the system architecture to be modular so that it can be maintained and extended easily.
+- As a system administrator, I want system logs to be available so that actions and events can be audited.
 
-Administrator
-- As an administrator, I want to monitor system performance and fraud statistics.
-- As an administrator, I want to access analytics dashboards for decision-making.
+Management Stories
+- As a manager, I want to see fraud statistics and trends so that I can evaluate the effectiveness of the detection system.
+- As a manager, I want to see blocked, approved, and reviewed transaction counts so that I can monitor system performance.
+- 
