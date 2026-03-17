@@ -18,4 +18,3 @@ System Administrator Stories
 Management Stories
 - As a manager, I want to see fraud statistics and trends so that I can evaluate the effectiveness of the detection system.
 - As a manager, I want to see blocked, approved, and reviewed transaction counts so that I can monitor system performance.
-- 
