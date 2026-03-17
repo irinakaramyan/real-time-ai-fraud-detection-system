@@ -8,6 +8,7 @@ Functional Requirements
 6. The system shall store transaction data in the database.
 7. The system shall allow analysts to review flagged transactions.
 8. The system shall allow administrators to manage fraud detection rules.
+9. The system shall use a machine learning-based model to evaluate transaction risk.
 
 Non-Functional Requirements
 1. The system should provide results quickly.
