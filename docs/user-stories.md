@@ -1,35 +1,18 @@
 User Stories
-1. Transaction Monitoring
-As a system analyst,  
-I want to monitor incoming transactions,  
-So that I can detect suspicious activity.
+Customer
+- As a customer, I want my transactions to be monitored in real time so that I am protected from fraudulent activity.
+- As a customer, I want suspicious transactions to be automatically blocked to minimize financial risk.
 
-2. Risk Scoring
-As a system,  
-I want to calculate risk levels for each transaction,  
-So that I can classify transactions as low, medium, or high risk.
+Fraud Analyst
+- As a fraud analyst, I want to view suspicious transactions so that I can investigate them efficiently.
+- As a fraud analyst, I want to analyze risk scores and transaction details to make informed decisions.
+- As a fraud analyst, I want to review and resolve fraud alerts.
 
-3. Fraud Detection
-As a financial analyst,  
-I want the system to flag suspicious transactions,  
-So that I can investigate potential fraud cases.
+System
+- As a system, I want to process transactions instantly to ensure real-time fraud detection.
+- As a system, I want to apply rule-based and machine learning detection mechanisms.
+- As a system, I want to generate alerts for high-risk activities.
 
-4. Case Management
-As an analyst,  
-I want to review flagged transactions,  
-So that I can decide whether they are fraudulent.
-
-5. Data Storage
-As a system,  
-I want to store transaction data,  
-So that it can be analyzed later.
-
-6. User Input
-As a user,  
-I want to submit transaction details,  
-So that the system can analyze them.
-
-7. Alerts
-As a system,  
-I want to generate alerts for high-risk transactions,  
-So that immediate action can be taken.
+Administrator
+- As an administrator, I want to monitor system performance and fraud statistics.
+- As an administrator, I want to access analytics dashboards for decision-making.
