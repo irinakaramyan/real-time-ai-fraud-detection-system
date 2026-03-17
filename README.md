@@ -1,43 +1,61 @@
-AI Fraud Detection System
-A web-based system that detects suspicious financial transactions using rule-based logic and a basic machine learning-inspired model.
+Real-Time AI Fraud Detection System
 
-Overview
-This project aims to identify potentially fraudulent transactions by analyzing transaction features such as amount and location.
-The system combines simple rule-based logic with an ML-inspired scoring approach to classify transactions into different risk levels.
+Project Overview
+The Real-Time AI Fraud Detection System is a backend-driven intelligent platform designed to detect and prevent fraudulent financial transactions in real time.  
+The system combines rule-based detection techniques with machine learning models to evaluate transaction risk and generate actionable insights.
 
-Features
-- Transaction analysis  
-- Risk scoring system  
-- Fraud detection (Low / Medium / High)  
-- ML-inspired prediction model  
-- Structured system architecture  
+Objectives
+- Detect fraudulent transactions in real-time
+- Combine rule-based and AI-based approaches
+- Provide dynamic risk scoring
+- Generate alerts for suspicious activities
+- Support fraud analysts with monitoring tools
 
-Tech Stack
-- Backend: Python, Flask  
-- Frontend: HTML, CSS, JavaScript  
-- Database: SQL  
-- Tools: Git, GitHub  
+Key Features
+- Real-time transaction processing
+- Hybrid fraud detection (rules + ML)
+- Risk scoring engine
+- Alert management system
+- Fraud analytics dashboard
+- Audit logging system
 
-Machine Learning Component
-The system includes a basic ML-inspired model that evaluates transaction risk using simple features:
+System Workflow
+1. Transaction is received through API
+2. Data is validated and stored
+3. Rule-based checks are executed
+4. ML model predicts fraud probability
+5. Risk score is calculated
+6. Decision engine assigns status:
+   - Approved
+   - Under Review
+   - Blocked
+7. Alerts are generated if necessary
 
-- Transaction amount  
-- Transaction location  
+Technology Stack
+- Backend: FastAPI (Python)
+- Database: PostgreSQL
+- Cache Layer: Redis
+- Machine Learning: scikit-learn
+- Frontend: React (optional)
+- Deployment: Docker
 
-The model assigns a risk score and classifies transactions into:
-- Low Risk  
-- Medium Risk  
-- High Risk  
+Project Scope
+This project focuses on:
+- Backend system design
+- Fraud detection logic
+- Machine learning integration
+- Real-time processing simulation
 
-System Architecture
-The system follows a three-layer architecture:
+Documentation
+- Architecture → `ARCHITECTURE.md`
+- Requirements → `REQUIREMENTS.md`
+- Use Cases → `USE_CASES.md`
+- User Stories → `USER_STORIES.md`
+- SDLC → `SDLC.md`
+- Structure → `STRUCTURE.md`
 
-- Frontend (Presentation Layer)  
-- Backend (Application Layer) 
-- Database (Data Layer) 
-
-How to Run
-1. Install dependencies (Flask)  
-2. Run the backend:
-   ```bash
-   python app.py
+Future Enhancements
+- Kafka-based event streaming
+- Advanced ML models (XGBoost, Deep Learning)
+- Explainable AI (XAI)
+- Microservices architecture
