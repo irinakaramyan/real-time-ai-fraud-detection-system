@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from ml_model import predict_fraud
 
 app = Flask(__name__)
 
@@ -20,7 +21,7 @@ def check_transaction():
     amount = data.get("amount", 0)
     location = data.get("location", "")
 
-    risk = detect_risk(amount, location)
+    risk = predict_fraud(amount, location)
 
     return jsonify({
         "amount": amount,
