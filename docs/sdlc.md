@@ -1,46 +1,35 @@
 Software Development Life Cycle (SDLC)
-Overview
-The development of the AI Fraud Detection System follows a structured Software Development Life Cycle to ensure quality, maintainability, and scalability.
 
 1. Planning
-The goal of the project is to design and develop a system capable of detecting suspicious financial transactions.
-
-Key objectives:
-- Detect fraudulent transactions  
-- Analyze transaction data  
-- Provide risk classification  
+- Identify problem domain
+- Define project scope and objectives
+- Select technologies
 
 2. Requirements Analysis
-Requirements were defined based on system needs.
-
-- Functional Requirements: Defined system behavior  
-- Non-Functional Requirements: Defined performance and security  
+- Gather functional requirements
+- Define non-functional requirements
+- Identify use cases and stakeholders
 
 3. System Design
-The system is designed using a three-layer architecture:
-
-- Frontend (User Interface)  
-- Backend (Business Logic)  
-- Database (Data Storage)  
+- Design system architecture
+- Create database schema
+- Define API structure
 
 4. Implementation
-The system is implemented using:
-
-- Python (Backend logic)  
-- Flask/Django (Web framework)  
-- HTML/CSS/JavaScript (Frontend)  
-- SQL (Database)  
+- Develop backend services
+- Implement fraud detection logic
+- Integrate machine learning model
 
 5. Testing
-Basic testing ensures that:
-- The system processes transactions correctly  
-- Risk detection logic works as expected  
+- Unit testing
+- Integration testing
+- Performance evaluation
 
-6. Deployment (Future Work)
-The system can be deployed as a web application accessible to users and analysts.
+6. Deployment
+- Containerization using Docker
+- Local or cloud deployment
 
-7. Maintenance (Future Work)
-Future improvements include:
-- Adding machine learning models  
-- Improving performance  
-- Enhancing security features  
+7. Maintenance
+- Continuous improvement
+- Bug fixing
+- Model retraining and updates
