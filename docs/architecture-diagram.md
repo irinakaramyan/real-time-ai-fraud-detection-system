@@ -27,6 +27,7 @@ Database
 Fraud Detection Result / Alert
 
 Explanation
+
 -The user interacts with the system through the frontend
 -The frontend sends transaction data to the backend API
 -The backend processes the request and calls the fraud detection engine
