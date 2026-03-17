@@ -4,6 +4,9 @@ Overview
 The AI Fraud Detection System is a web-based application designed to detect suspicious financial transactions using rule-based logic.
 The system follows a layered architecture to ensure separation of concerns, scalability, and maintainability.
 
+Machine Learning Component
+The backend includes a simple machine learning-inspired model that evaluates transaction risk based on input features.
+
 Architecture Style
 The system follows a three-layer architecture:
 
@@ -21,7 +24,7 @@ Components
 - Handles business logic  
 - Processes transaction data  
 - Applies fraud detection rules  
-- Calculates risk scores  
+- Calculates risk scores
 
 3. Database (Data Layer)
 - Stores transaction data  
