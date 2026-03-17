@@ -1,4 +1,5 @@
 User Stories
+
 Customer
 - As a customer, I want my transactions to be monitored in real time so that I am protected from fraudulent activity.
 - As a customer, I want suspicious transactions to be automatically blocked to minimize financial risk.
