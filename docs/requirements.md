@@ -1,22 +1,21 @@
 System Requirements
 
-1. Functional Requirements
-- The system shall process transactions in real time
-- The system shall store transaction data securely
-- The system shall compute fraud risk scores
-- The system shall detect suspicious patterns
-- The system shall generate alerts for high-risk transactions
-- The system shall provide a monitoring dashboard
-- The system shall support user and account management
+Functional Requirements
+1. The system shall receive financial transaction data through an API.
+2. The system shall store transaction data in a PostgreSQL database.
+3. The system shall evaluate transactions using predefined fraud detection rules.
+4. The system shall apply a machine learning model to estimate fraud probability.
+5. The system shall calculate a final risk score for each transaction.
+6. The system shall classify each transaction as approved, under review, or blocked.
+7. The system shall generate alerts for suspicious transactions.
+8. The system shall allow analysts to review and manage alerts.
+9. The system shall display fraud statistics and transaction summaries on a dashboard.
+10. The system shall maintain logs for important system actions.
 
-2. Non-Functional Requirements
-- High performance (low latency processing)
-- Scalability to handle increasing transaction volume
-- Data security and privacy
-- Reliability and fault tolerance
-- Maintainability and extensibility
-
-3. Constraints
-- Backend must be implemented in Python
-- The system must include a machine learning component
-- The system must simulate real-time processing
+Non-Functional Requirements
+1. The system should provide near real-time response for transaction evaluation.
+2. The system should be modular and easy to maintain.
+3. The system should ensure data consistency and integrity.
+4. The system should support future scalability and feature expansion.
+5. The system should provide a clear and user-friendly dashboard interface.
+6. The system should be secure in handling transaction-related data.
