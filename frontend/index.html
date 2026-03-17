@@ -1,10 +1,128 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Fraud Detection</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fraud Detection Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      width: 350px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 18px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 12px;
+      background: #f9fafb;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+
+    .decision {
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <h1>AI Fraud Detection System</h1>
-    <p>Frontend placeholder for transaction checking.</p>
+  <div class="container">
+    <h2>Fraud Detection Demo</h2>
+
+    <label for="amount">Amount</label>
+    <input type="number" id="amount" placeholder="Enter amount" />
+
+    <label for="country">Country</label>
+    <input type="text" id="country" placeholder="Enter country" />
+
+    <label for="device">New Device</label>
+    <select id="device">
+      <option value="false">No</option>
+      <option value="true">Yes</option>
+    </select>
+
+    <button onclick="checkFraud()">Check Transaction</button>
+
+    <div class="result" id="result">
+      <p>Result will appear here...</p>
+    </div>
+  </div>
+
+  <script>
+    async function checkFraud() {
+      const amount = parseFloat(document.getElementById("amount").value);
+      const country = document.getElementById("country").value;
+      const is_new_device = document.getElementById("device").value === "true";
+
+      const resultBox = document.getElementById("result");
+
+      try {
+        const response = await fetch("http://127.0.0.1:8000/predict", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            amount: amount,
+            country: country,
+            is_new_device: is_new_device
+          })
+        });
+
+        const data = await response.json();
+
+        resultBox.innerHTML = `
+          <p><strong>Risk Score:</strong> ${data.risk_score}</p>
+          <p class="decision"><strong>Decision:</strong> ${data.decision}</p>
+        `;
+      } catch (error) {
+        resultBox.innerHTML = `<p style="color:red;">Error connecting to backend.</p>`;
+      }
+    }
+  </script>
 </body>
 </html>
