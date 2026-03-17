@@ -1,53 +1,33 @@
-Use Case Specifications
+Use Cases
 
-1: Process Transaction
-Actor: System  
-Description: Processes incoming transaction and evaluates fraud risk  
+Main Actors
+- Customer
+- Fraud Analyst
+- System Administrator
+- Fraud Detection System
 
-Steps:
-1. Receive transaction request
-2. Validate input data
-3. Store transaction in database
-4. Execute rule-based checks
-5. Run ML model prediction
-6. Calculate risk score
-7. Return decision
+Main Use Cases
 
-2: Detect Fraud
-Actor: System  
-Description: Identifies suspicious transactions  
+1. Submit Transaction
+The customer or an external banking system submits a transaction to the platform.
 
-Steps:
-1. Analyze transaction attributes
-2. Detect anomalies
-3. Assign risk score
-4. Flag transaction if necessary
+2. Store Transaction
+The system stores the transaction details in the database.
 
-3: Generate Alert
-Actor: System  
-Description: Creates alert for suspicious transactions  
+3. Evaluate Fraud Risk
+The system applies fraud detection rules and machine learning analysis to calculate a risk score.
 
-Steps:
-1. Identify high-risk transaction
-2. Generate alert
-3. Store alert in database
-4. Notify dashboard
+4. Classify Transaction
+The system classifies the transaction as approved, under review, or blocked.
 
-4: Review Alert
-Actor: Fraud Analyst  
-Description: Investigate suspicious transactions  
+5. Generate Alert
+If the transaction is suspicious, the system creates an alert for analyst review.
 
-Steps:
-1. View alert details
-2. Analyze transaction data
-3. Mark as fraud or legitimate
-4. Update system status
+6. Review Alert
+The fraud analyst reviews suspicious transactions and updates the alert status.
 
-5: View Dashboard
-Actor: Admin / Analyst  
-Description: Monitor system and fraud metrics  
+7. View Dashboard
+The fraud analyst or manager views fraud statistics, suspicious activities, and trends on the dashboard.
 
-Steps:
-1. Access dashboard
-2. View statistics and trends
-3. Analyze fraud patterns
+### 8. Maintain Audit Logs
+The system records important events and actions for tracking and accountability.
