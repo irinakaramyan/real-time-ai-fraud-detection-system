@@ -1,56 +1,46 @@
 System Architecture
 
-Overview
-The AI Fraud Detection System is a web-based application designed to detect suspicious financial transactions using rule-based logic.
-The system follows a layered architecture to ensure separation of concerns, scalability, and maintainability.
+Architectural Style
+The system follows a layered architecture with modular components.
 
-Machine Learning Component
-The backend includes a simple machine learning-inspired model that evaluates transaction risk based on input features.
+High-Level Architecture
 
-Architecture Style
-The system follows a three-layer architecture:
-
-- Presentation Layer (Frontend)
-- Application Layer (Backend)
-- Data Layer (Database)
+Client → API Layer → Service Layer → Data Layer / ML Module / Cache
 
 Components
-1. Frontend (Presentation Layer)
-- Provides the user interface  
-- Allows users to submit transaction data  
-- Displays analysis results  
 
-2. Backend (Application Layer)
-- Handles business logic  
-- Processes transaction data  
-- Applies fraud detection rules  
-- Calculates risk scores
+1. API Layer
+- Handles HTTP requests
+- Performs validation
+- Routes requests to services
 
-3. Database (Data Layer)
-- Stores transaction data  
-- Stores risk levels and results  
-- Supports future analytics  
+2. Service Layer
+- Implements business logic
+- Executes fraud detection rules
+- Coordinates ML predictions
 
-4. Documentation Layer
-- Contains system documentation  
-- Includes user stories, use cases, and requirements  
+3. Database Layer (PostgreSQL)
+- Stores transactional data
+- Maintains audit logs
+- Stores alerts and risk scores
 
-System Workflow
-1. The user submits transaction data through the frontend  
-2. The backend receives and processes the data  
-3. Fraud detection rules are applied  
-4. A risk score is calculated  
-5. The result is stored in the database  
-6. The result is returned to the user  
+4. Cache Layer (Redis)
+- Stores real-time counters
+- Enables fast anomaly detection
 
-Design Principles
-- Separation of concerns  
-- Scalability  
-- Maintainability  
-- Simplicity  
+5. Machine Learning Module
+- Predicts fraud probability
+- Processes feature inputs
 
-Future Enhancements
-- Integration of machine learning models  
-- Real-time fraud detection  
-- User authentication system  
-- Advanced analytics dashboard  
+6. Decision Engine
+- Combines rule-based and ML scores
+- Produces final decision
+
+Data Flow
+1. Transaction received
+2. Data stored in database
+3. Rule engine evaluates transaction
+4. ML model predicts fraud probability
+5. Risk score calculated
+6. Decision generated
+7. Alert created if needed
