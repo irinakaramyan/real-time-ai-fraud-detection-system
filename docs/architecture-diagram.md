@@ -1,36 +1,24 @@
-Architecture Diagram System Components
+# Architecture Diagram
 
-User
+```mermaid
+flowchart TD
+    A[Customer] --> B[FastAPI Backend]
 
-|
+    B --> C[PostgreSQL]
+    B --> D[Redis]
 
-Frontend Interface
+    B --> E[Fraud Rules]
+    B --> F[ML Model]
 
-| 
+    E --> G[Decision Engine]
+    F --> G
 
-Backend API Service
+    G --> H{Decision}
 
-|
+    H -->|Approve| I[Approved]
+    H -->|Review| J[Alert]
+    H -->|Block| K[Blocked]
 
-Fraud Detection Engine
-
-| 
-
-Machine Learning Risk Scoring Model
-
-|
-
-Database
-
-|
-
-Fraud Detection Result / Alert
-
-Explanation
-
--The user interacts with the system through the frontend
--The frontend sends transaction data to the backend API
--The backend processes the request and calls the fraud detection engine
--The machine learning model evaluates the transaction risk
--The database stores transaction data and fraud analysis results
--The system returns the final fraud detection result
+    J --> L[Dashboard]
+    I --> L
+    K --> L
