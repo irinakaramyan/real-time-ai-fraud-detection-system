@@ -1,10 +1,9 @@
-System Architecture
+## System Architecture
 
-High-Level Overview
-
+## High-Level Overview
 The system is designed as a modular real-time fraud detection platform that processes transactions, evaluates risk, and generates alerts.
 
-Architecture Components
+## Architecture Components
 
 - Client / Transaction Simulator
 - FastAPI Backend
@@ -16,7 +15,7 @@ Architecture Components
 - Alerts Module
 - Dashboard (Frontend)
 
-Data Flow
+## Data Flow
 
 1. A transaction is sent to the backend via API.
 2. The transaction is stored in PostgreSQL.
@@ -31,7 +30,7 @@ Data Flow
 8. If suspicious, an alert is created.
 9. The dashboard displays transactions and alerts.
 
-Architectural Style
+## Architectural Style
 
 The system follows a modular monolithic architecture with clear separation of concerns:
 - API Layer
