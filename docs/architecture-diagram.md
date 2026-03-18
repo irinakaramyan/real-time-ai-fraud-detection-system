@@ -1,24 +1,30 @@
 # Architecture Diagram
 
 ```mermaid
-flowchart TB
-    U[User / Payment Channel] --> API[FastAPI API Layer]
+flowchart LR
 
-    API --> K[Kafka Event Stream]
+    A[Customer / External Banking System] --> B[FastAPI API Gateway]
 
-    K --> VAL[Validation Service]
-    K --> RULE[Rule Engine Service]
-    K --> FEAT[Feature Extraction Service]
+    B --> C[Transaction Processing Module]
+    C --> D[(PostgreSQL)]
+    C --> E[(Redis)]
 
-    FEAT --> REDIS[Redis Feature Store]
-    REDIS --> ML[ML Scoring Service]
+    C --> F[Fraud Rules Engine]
+    C --> G[ML Fraud Detection Model]
 
-    RULE --> DEC[Decision Engine]
-    ML --> DEC
-    VAL --> DEC
+    F --> H[Risk Scoring and Decision Layer]
+    G --> H
 
-    DEC --> DB[(PostgreSQL)]
-    DEC --> ALERT[Alert Service]
-    DEC --> DASH[Fraud Monitoring Dashboard]
+    H --> I{Decision Result}
 
-    ALERT --> DASH
+    I -->|Approve| J[Store Approved Transaction]
+    I -->|Review| K[Generate Alert]
+    I -->|Block| L[Reject / Block Transaction]
+
+    J --> M[Monitoring Dashboard]
+    K --> M
+    L --> M
+
+    K --> N[Fraud Analyst Review]
+    C --> O[Audit Logging Service]
+    O --> D
