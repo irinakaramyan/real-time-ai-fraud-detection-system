@@ -1,10 +1,10 @@
-Real-Time AI Fraud Detection System
+# Real-Time AI Fraud Detection System
 
-Overview
+## Overview
 This project is a real-time fraud detection system designed to monitor and analyze financial transactions.  
 It combines rule-based logic and machine learning models to detect suspicious activities and classify transactions instantly.
 
-Key Features
+## Key Features
 - Real-time transaction processing
 - Rule-based fraud detection engine
 - Machine learning risk scoring
