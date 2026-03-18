@@ -1,5 +1,3 @@
-```markdown
-# Real-Time AI Fraud Detection System - Advanced Architecture
 
 ```mermaid
 flowchart TB
