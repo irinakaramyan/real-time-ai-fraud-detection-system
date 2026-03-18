@@ -1,6 +1,6 @@
-Database Schema
+## Database Schema
 
-Main Tables
+## Main Tables
 - users
 - accounts
 - cards
@@ -10,33 +10,33 @@ Main Tables
 - alerts
 - audit_logs
 
-Table Descriptions
+## Table Descriptions
 
-users
+## users
 Stores customer information.
 
-accounts
+## accounts
 Stores bank account information linked to users.
 
-cards
+## cards
 Stores payment card information linked to accounts.
 
-devices
+## devices
 Stores device information used during transactions.
 
-transactions
+## transactions
 Stores transaction details such as amount, merchant, location, time, and status.
 
-risk_scores
+## risk_scores
 Stores calculated fraud scores, including rule-based score, ML score, and final score.
 
-alerts
+## alerts
 Stores suspicious transaction alerts created by the system.
 
-audit_logs
+## audit_logs
 Stores important actions and events for audit and monitoring purposes.
 
-Main Relationships
+## Main Relationships
 - One user can have multiple accounts.
 - One user can have multiple devices.
 - One account can have multiple cards.
