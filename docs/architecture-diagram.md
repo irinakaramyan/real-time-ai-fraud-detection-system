@@ -1,24 +1,25 @@
-# Architecture Diagram
+```markdown
+# Real-Time AI Fraud Detection System - Advanced Architecture
 
 ```mermaid
-flowchart TD
-    A[Customer] --> B[FastAPI Backend]
+flowchart TB
+    U[User / Payment Channel] --> API[FastAPI API Layer]
 
-    B --> C[PostgreSQL]
-    B --> D[Redis]
+    API --> K[Kafka Event Stream]
 
-    B --> E[Fraud Rules]
-    B --> F[ML Model]
+    K --> VAL[Validation Service]
+    K --> RULE[Rule Engine Service]
+    K --> FEAT[Feature Extraction Service]
 
-    E --> G[Decision Engine]
-    F --> G
+    FEAT --> REDIS[Redis Feature Store]
+    REDIS --> ML[ML Scoring Service]
 
-    G --> H{Decision}
+    RULE --> DEC[Decision Engine]
+    ML --> DEC
+    VAL --> DEC
 
-    H -->|Approve| I[Approved]
-    H -->|Review| J[Alert]
-    H -->|Block| K[Blocked]
+    DEC --> DB[(PostgreSQL)]
+    DEC --> ALERT[Alert Service]
+    DEC --> DASH[Fraud Monitoring Dashboard]
 
-    J --> L[Dashboard]
-    I --> L
-    K --> L
+    ALERT --> DASH
