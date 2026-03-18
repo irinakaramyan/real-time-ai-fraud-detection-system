@@ -37,5 +37,3 @@ See:
 ## Machine Learning Model
 The system uses a supervised learning model trained on transaction data.  
 Features include transaction amount, location, frequency, and user behavior patterns.
-
-## Project Structure
