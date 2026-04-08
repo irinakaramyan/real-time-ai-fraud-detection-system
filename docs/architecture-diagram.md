@@ -15,8 +15,7 @@ flowchart TB
         UI3[Alerts]
         UI4[Submit Transaction]
     end
-
-    subgraph API[" Flask REST API Layer"]
+   subgraph API[" Flask REST API Layer"]
         direction LR
         A1["/api/auth"]
         A2["/api/transactions"]
@@ -24,7 +23,6 @@ flowchart TB
         A4["/api/dashboard"]
         A5["/api/customers"]
     end
-
     subgraph SERVICES[" Fraud Detection Services"]
         direction TB
         FD["Fraud Detector\n(Orchestrator)"]
@@ -33,14 +31,12 @@ flowchart TB
         FD --> RE
         FD --> ML
     end
-
     subgraph MLMODELS[" ML Models (scikit-learn)"]
         direction LR
         ISO["Isolation Forest\n(Unsupervised)"]
         RFC["Random Forest\n(Supervised)"]
         SCL["Standard Scaler\n(Feature Normalization)"]
     end
-
     subgraph DB[" MySQL Database"]
         direction LR
         T1[(users)]
@@ -50,7 +46,6 @@ flowchart TB
         T5[(risk_scores)]
         T6[(fraud_rules)]
     end
-
     CLIENT -- "HTTP + JWT" --> API
     API --> SERVICES
     ML --> MLMODELS
