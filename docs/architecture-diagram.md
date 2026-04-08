@@ -1,14 +1,14 @@
-# 🛡️ AI Fraud Detection System
+#  AI Fraud Detection System
 
 A full-stack, real-time financial fraud detection platform built with Python (Flask), MySQL, and Machine Learning. Combines rule-based heuristics with an Isolation Forest + Random Forest ensemble to score, flag, and alert on suspicious transactions.
 
 ---
 
-## 📐 System Architecture
+##  System Architecture
 
 ```mermaid
 flowchart TB
-    subgraph CLIENT["🌐 Client Layer (Browser)"]
+    subgraph CLIENT[" Client Layer (Browser)"]
         direction LR
         UI1[Dashboard]
         UI2[Transactions]
@@ -16,7 +16,7 @@ flowchart TB
         UI4[Submit Transaction]
     end
 
-    subgraph API["⚙️ Flask REST API Layer"]
+    subgraph API[" Flask REST API Layer"]
         direction LR
         A1["/api/auth"]
         A2["/api/transactions"]
@@ -25,7 +25,7 @@ flowchart TB
         A5["/api/customers"]
     end
 
-    subgraph SERVICES["🔍 Fraud Detection Services"]
+    subgraph SERVICES[" Fraud Detection Services"]
         direction TB
         FD["Fraud Detector\n(Orchestrator)"]
         RE["Rule Engine\n(6 Active Rules)"]
@@ -34,14 +34,14 @@ flowchart TB
         FD --> ML
     end
 
-    subgraph MLMODELS["🤖 ML Models (scikit-learn)"]
+    subgraph MLMODELS[" ML Models (scikit-learn)"]
         direction LR
         ISO["Isolation Forest\n(Unsupervised)"]
         RFC["Random Forest\n(Supervised)"]
         SCL["Standard Scaler\n(Feature Normalization)"]
     end
 
-    subgraph DB["🗄️ MySQL Database"]
+    subgraph DB[" MySQL Database"]
         direction LR
         T1[(users)]
         T2[(customers)]
@@ -60,11 +60,11 @@ flowchart TB
 
 ---
 
-## 🔄 Fraud Detection Flow
+##  Fraud Detection Flow
 
 ```mermaid
 flowchart LR
-    TXN["📥 Incoming\nTransaction"] --> VAL["Validate &\nStore"]
+    TXN[" Incoming\nTransaction"] --> VAL["Validate &\nStore"]
     VAL --> RULE["Rule Engine\n──────────\n• Large Amount >$10K\n• Unusual Hours 1am–5am\n• High Frequency >5/hr\n• International Location\n• Round Amount\n• Amount Deviation 3σ"]
     VAL --> MLPIPE["ML Pipeline\n──────────\n1. Extract 10 Features\n2. Normalize (Scaler)\n3. Isolation Forest Score\n4. Random Forest Prob."]
     RULE -- "Rule Score (0–1)\nWeight: 40%" --> COMBINE
@@ -72,9 +72,9 @@ flowchart LR
     COMBINE["Combined Risk Score\n= 0.4×Rule + 0.6×ML"] --> DECIDE
 
     DECIDE{Risk Score?}
-    DECIDE -- "< 0.50" --> APPROVED["✅ APPROVED"]
-    DECIDE -- "0.50 – 0.79" --> FLAGGED["⚠️ FLAGGED\n+ Alert Generated"]
-    DECIDE -- "≥ 0.80" --> BLOCKED["🚫 BLOCKED\n+ Critical Alert"]
+    DECIDE -- "< 0.50" --> APPROVED[" APPROVED"]
+    DECIDE -- "0.50 – 0.79" --> FLAGGED[" FLAGGED\n+ Alert Generated"]
+    DECIDE -- "≥ 0.80" --> BLOCKED[" BLOCKED\n+ Critical Alert"]
 
     FLAGGED --> ALERT["Fraud Alert\n(severity: medium/high)"]
     BLOCKED --> ALERT2["Fraud Alert\n(severity: critical)"]
@@ -84,7 +84,7 @@ flowchart LR
 
 ---
 
-## 🗃️ Database Schema
+##  Database Schema
 
 ```mermaid
 erDiagram
@@ -174,7 +174,7 @@ erDiagram
 
 ---
 
-## 🧠 ML Feature Engineering
+##  ML Feature Engineering
 
 | # | Feature | Description |
 |---|---------|-------------|
@@ -191,7 +191,7 @@ erDiagram
 
 ---
 
-## 🚦 Fraud Rules Engine
+##  Fraud Rules Engine
 
 | Rule | Trigger | Weight |
 |------|---------|--------|
@@ -206,7 +206,7 @@ erDiagram
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 AI_FD/
@@ -244,7 +244,7 @@ AI_FD/
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ```bash
 # 1. Install dependencies
@@ -265,7 +265,7 @@ python simulate.py --count 30 --fraud-rate 0.4
 
 ---
 
-## 🔌 REST API Reference
+##  REST API Reference
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -285,7 +285,7 @@ python simulate.py --count 30 --fraud-rate 0.4
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -300,7 +300,7 @@ python simulate.py --count 30 --fraud-rate 0.4
 
 ---
 
-## 👤 Default Credentials
+##  Default Credentials
 
 | Role | Username | Password |
 |------|----------|----------|
