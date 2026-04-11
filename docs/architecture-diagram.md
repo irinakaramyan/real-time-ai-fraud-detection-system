@@ -1,3 +1,7 @@
+```mermaid
+diagram
+
+
 flowchart TB
 
 %% ================= CLIENT =================
