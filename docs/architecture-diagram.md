@@ -1,6 +1,4 @@
-```mermaid
-diagram
-
+```mermaid diagram
 
 flowchart TB
 
